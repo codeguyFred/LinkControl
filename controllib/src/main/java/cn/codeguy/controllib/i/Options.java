@@ -18,4 +18,12 @@ public interface Options {
      * @return
      */
     Options direction(@Action int direction);
+
+    /**
+     * action=1表示节点关闭时，子节点跟父节点一样关闭
+     * action=0表示节点关闭时，子节点还是原来的那样
+     * @param action
+     * @return
+     */
+    Options action(@Action int action);
 }

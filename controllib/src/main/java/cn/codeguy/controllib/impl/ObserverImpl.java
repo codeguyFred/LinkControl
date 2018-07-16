@@ -49,40 +49,59 @@ public class ObserverImpl implements Observer {
     public Source open(Source sourceParent) {
         isActioned=true;
         //ActionCallbackImpl 重置所有状态为false
-        if (action == 0) {
+        if (action == 0&&OptionsConfig.get().getAction()==-1) {
             list.clear();
         }
         if (!list.isEmpty()) {
-
             switch (OptionsConfig.get().getDirection()) {
                 case DIRECTION.DEEP:
                     for (Source source : list) {
-                        source.open(sourceParent);
+                        if (action==0&&OptionsConfig.get().getAction()==0){
+                            source.close(sourceParent);
+                        }else {
+                            source.open(sourceParent);
+                        }
                     }
                     break;
 
                 case DIRECTION.DEEP_REVERSE:
                     for (Source source : list) {
-                        source.open(sourceParent);
+                        if (action==0&&OptionsConfig.get().getAction()==0){
+                            source.close(sourceParent);
+                        }else {
+                            source.open(sourceParent);
+                        }
                     }
                     break;
 
                 case DIRECTION.LEFT2RIGHT:
                     for (Source source : list) {
-                        source.open(sourceParent);
+                        if (action==0&&OptionsConfig.get().getAction()==0){
+                            source.close(sourceParent);
+                        }else {
+                            source.open(sourceParent);
+                        }
                     }
                     break;
                 case DIRECTION.RIGHT2LEFT:
                     for (int i = list.size() - 1; i >= 0; i--) {
                         Source source = list.get(i);
-                        source.open(sourceParent);
+                        if (action==0&&OptionsConfig.get().getAction()==0){
+                            source.close(sourceParent);
+                        }else {
+                            source.open(sourceParent);
+                        }
                     }
                     break;
 
                 case DIRECTION.OTHER:
                     for (int i = list.size() - 1; i >= 0; i--) {
                         Source source = list.get(i);
-                        source.open(sourceParent);
+                        if (action==0&&OptionsConfig.get().getAction()==0){
+                            source.close(sourceParent);
+                        }else {
+                            source.open(sourceParent);
+                        }
                     }
                     break;
 
@@ -97,7 +116,7 @@ public class ObserverImpl implements Observer {
     public Source close(Source sourceParent) {
         isActioned=true;
         //ActionCallbackImpl 重置所有状态
-        if (action == 0) {
+        if (action == 0&&OptionsConfig.get().getAction()==-1) {
             list.clear();
         }
         if (!list.isEmpty()) {

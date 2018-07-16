@@ -13,6 +13,8 @@ import cn.codeguy.controllib.i.Options;
 public class OptionsConfig implements Options {
     private static final OptionsConfig INSTANCE = new OptionsConfig();
     private int direction=-1;
+    private int action=-1;
+
     // TODO: 2018/7/12 是否清空数据，用于优化
     private boolean clear;
 
@@ -28,5 +30,13 @@ public class OptionsConfig implements Options {
         this.direction=direction;
         return this;
     }
+    @Override
+    public OptionsConfig action(@Action int action) {
+        this.action=action;
+        return this;
+    }
 
+    public int getAction() {
+        return action;
+    }
 }

@@ -2,6 +2,13 @@ package cn.codeguy.controllib;
 
 import org.junit.Test;
 
+import cn.codeguy.controllib.config.OptionsConfig;
+import cn.codeguy.controllib.impl.ObserverAImpl;
+import cn.codeguy.controllib.impl.ObserverBImpl;
+import cn.codeguy.controllib.impl.ObserverCImpl;
+import cn.codeguy.controllib.impl.ObserverDImpl;
+import cn.codeguy.controllib.impl.ObserverEImpl;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -33,7 +40,7 @@ public class ExampleUnitTest {
                 .withSource(observerC)
                 .close(null);*/
         //2 开的时候指定某个节点关,当有子节点的时候，子节点不执行
-        /*ObserverAImpl observerA = new ObserverAImpl(1);
+        ObserverAImpl observerA = new ObserverAImpl(1);
         Source observerB = new ObserverBImpl(2).action(0);
         ObserverCImpl observerC = new ObserverCImpl(3);
         Source observerD = new ObserverDImpl(4);
@@ -45,9 +52,10 @@ public class ExampleUnitTest {
                         .withSource(observerD)
                         .withSource(observerE))
                 .withSource(observerC)
-                .open(null);*/
-        //3 指定某个节点不执行
-/*        ObserverAImpl observerA = new ObserverAImpl(1);
+                .open(null);
+
+        //3 指定某个节点关,当有子节点的时候，子节点不执行
+        /*ObserverAImpl observerA = new ObserverAImpl(1);
         Source observerB = new ObserverBImpl(2).setActioned(true);
         ObserverCImpl observerC = new ObserverCImpl(3);
         Source observerD = new ObserverDImpl(4);
@@ -59,16 +67,40 @@ public class ExampleUnitTest {
                         .withSource(observerD)
                         .withSource(observerE))
                 .withSource(observerC)
-//                .open(null);
+              //.open(null);
                 .close(null);*/
-        // TODO: 2018/7/16
+
 
         //4 开的时候指定某个节点关,当有子节点的时候，子节点也执行原来的逻辑
+        /*ObserverAImpl observerA = new ObserverAImpl(1);
+        Source observerB = new ObserverBImpl(2).action(0);
+        ObserverCImpl observerC = new ObserverCImpl(3);
+        Source observerD = new ObserverDImpl(4);
+        Source observerE = new ObserverEImpl(5);
 
-        // TODO: 2018/7/16
+        observerA
+                .apply(OptionsConfig.get().direction(DIRECTION.LEFT2RIGHT).action(1))
+                .withSource(observerB
+                        .withSource(observerD)
+                        .withSource(observerE))
+                .withSource(observerC)
+                .open(null);*/
+
+
         //5 开的时候指定某个节点关,当有子节点的时候，子节点跟父节点执行相同的逻辑
+        /*ObserverAImpl observerA = new ObserverAImpl(1);
+        Source observerB = new ObserverBImpl(2).action(0);
+        ObserverCImpl observerC = new ObserverCImpl(3);
+        Source observerD = new ObserverDImpl(4);
+        Source observerE = new ObserverEImpl(5);
 
-
+        observerA
+                .apply(OptionsConfig.get().direction(DIRECTION.LEFT2RIGHT).action(0))
+                .withSource(observerB
+                        .withSource(observerD)
+                        .withSource(observerE))
+                .withSource(observerC)
+                .open(null);*/
 
     }
 }

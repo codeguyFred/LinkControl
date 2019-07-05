@@ -1,6 +1,6 @@
 # LinkControlBridge
 >the framework to easily,more convenient control View's Animation,such as one view clicked with some views'animation shown or some views of the whole views to shown or hided,some linked actions，will also use rxjava to write control code later.
-
+this may not right sample,this is the idea I want to show https://github.com/codeguyFred/MyPerformance/blob/master/app/src/main/java/com/optimize/performance/launchstarter/sort/TaskSortUtil.java
 
 ```
  *       A

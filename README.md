@@ -17,8 +17,8 @@ this may not right sample,this is the idea I want to show https://github.com/cod
 因为RIGHT2LEFT使用场景不是很多，所以待完善
 
 # 适用场景
-具备相反条件的或者需要联动的所有操作，比如动画的播放和停止，View的显示和隐藏，动作的触发和联动，app启动优化（控制子线程执行先后顺序和关系
-https://github.com/codeguyFred/MyPerformance/blob/master/app/src/main/java/com/optimize/performance/launchstarter/sort/TaskSortUtil.java）
+具备相反条件的或者需要联动的所有操作，比如动画的播放和停止，View的显示和隐藏，动作的触发和联动，app启动优化（控制子线程执行先后顺序关系）
+https://github.com/codeguyFred/MyPerformance/blob/master/app/src/main/java/com/optimize/performance/launchstarter/sort/TaskSortUtil.java
 
 # 灵感来源
 广度遍历和深度遍历，物理的并联开关
